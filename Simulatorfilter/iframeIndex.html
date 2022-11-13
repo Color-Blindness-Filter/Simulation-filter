@@ -1,0 +1,52 @@
+<html>
+<head>
+  <link rel='stylesheet' href='css/styles-min.css' type="text/css">
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js'></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css'/>
+
+</head>
+<body>
+  <div id="top-container">
+    <div style="padding:4px; margin-bottom:3px; background-color: #eee;" width="100%">
+      select image <input type="file" id="fileInput"/>
+      <span id="loadingIndicator" style="display:none; float:right;">&nbsp;<small><em>Working...</em></small></span>
+    </div>
+
+    <table id="progressBar" width="100%" cellpadding="2px" style="font-size:0.9em;">
+      <tr style="font-style:italic;">
+        <td>Trichromatic view:</td>
+        
+        <td>Dichromatic view:</td>
+       
+      </tr>
+      <tr>  
+        <td style="vertical-align:top;"><input type="radio" name="colorblindType" value="Normal" checked/>Normal</td>
+       
+        <td><input type="radio" name="colorblindType" value="Protanopia"/>Red-Blind/Protanopia<br/>
+            <input type="radio" name="colorblindType" value="Deuteranopia"/>Green-Blind/Deuteranopia<br/>
+            <input type="radio" name="colorblindType" value="Tritanopia"/>Blue-Blind/Tritanopia</td>
+        
+      </tr>
+    </table>
+
+    <div style="padding:6px; font-size:0.9em;">
+      Use lens to compare with normal view: <input id="lens-no" type="radio" name="lens" value="No" checked="checked" disabled="true"/>No Lens
+      <input id="lens-normal" type="radio" name="lens" value="Normal" disabled="true"/>Normal Lens
+      <input id="lens-inverse" type="radio" name="lens" value="Inverse" disabled="true"/>Inverse Lens<br/>
+      <div style="margin-top:5px;"><small>
+        <a href="#" onclick="panZoomImage.resetView();">Reset View</a>
+        &nbsp; <a href="#" target="blank" id="imageLink" style="display: none">Open simulated image in new window</a>
+      </small></div>
+    </div>
+  </div>
+
+  <div id="container">
+      <div height="580px" id="canvasDiv">
+        <canvas id="outCanvas" width="775px" height="580px">Your Browser does not support &lt;canvas&gt;. Get an upgrade!</canvas>
+      </div>
+  </div>
+  
+  <script src="./simple.js" type="text/javascript"></script>  
+</body>
+</html>
